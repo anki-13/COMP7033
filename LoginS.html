@@ -1,38 +1,51 @@
 
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="styleL.css">
+
+            
 </head>
+
 <body>
     <div class="center">
-        <h1>Login</h1>
-        <form method="post">
-            <div class="txt_field">
-                <input type="text" required>
-                <span></span>
-                <label>Username</label>
-            </div>
-            <div class="txt_field">
-                <input type="password" required>
-                <span></span>
-                <label>Password</label>
-            </div>
+        <h1>Login Page</h1>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" onclick="auth()" value="Login">
+
             <div class="pass">Forgot password?</div>
-            <button type="submit" value="Login" onclick="auth()">Log in</button>
-            <div class="signup_link">
-                Not a member? <a href="#">Signup</a>
-            </div>
+                <div class="signup_link">
+                    Not a member? <a href="#">Signup</a>
+                </div>
         </form>
-        <script>
-            function auth(){
-                window.location.assign('Student.html');
-            }
+
+        <script type="text/javascript">
+            const form = document.querySelector('form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // prevent default form submission behavior
+
+                // validate username and password
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                if (username === 'myusername' && password === 'mystudentpassword') {
+                    alert('Login successful!');
+                    window.location = "Student.html"
+                } else {
+                    alert('Username or password incorrect. Please try again.');
+                }
+            });
+            
         </script>
     </div>
-    
 </body>
 </html>
