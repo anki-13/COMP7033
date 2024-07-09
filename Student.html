@@ -16,6 +16,7 @@
                 <li><button type="submit3" value="btn-3" onclick="authGrades()">Grades</button></li>
                 <li><button type="submit4" value="btn-4" onclick="authContact()">Contact</button></li>
                 <li><button type="submit5" value="btn-5" onclick="authCourses()">Courses</button></li>
+                <li><button type="submit6" value="btn-6" onclick="authTimetable()">Timetable</button></li>
             </ul>
         </nav>
         <div class="selection">
@@ -46,8 +47,13 @@
             }
         </script>
         <script>
-            function authContact(){
+            function authCourses(){
                 window.location.assign('index.html');
+            }
+        </script>
+         <script>
+            function authTimetable(){
+                window.location.assign('https://calendar.google.com');
             }
         </script>
     </div>
